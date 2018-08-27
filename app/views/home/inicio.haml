@@ -1,0 +1,3 @@
+%h1 Bienvenido a la página
+-if usuario_signed_in?
+  =link_to "Cerrar sesión", destroy_usuario_session_path, method: :delete

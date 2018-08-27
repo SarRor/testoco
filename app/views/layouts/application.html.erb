@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testoco</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1788454621246562',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v3.1'
+        });
+
+        FB.AppEvents.logPageView();
+
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="container" style="background-color:white;">
+      <%= render 'layouts/navigation' %>
+      <div style="height:55px;"></div>
+      <%= render 'layouts/messages' %>
+
+      <%= yield %>
+
+    </div>
+
+  </body>
+</html>
