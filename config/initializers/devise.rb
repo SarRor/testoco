@@ -26,6 +26,8 @@ Devise.setup do |config|
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
   config.omniauth :facebook, "1788454621246562", "b3d84ed5539c50a8f3ec359ed4a989ac", token_params: { parse: :json }, callback_url: "http://localhost:3000/usuarios/auth/facebook/callback"
+
+  config.omniauth :google_oauth2, '163263814588-pg9jucrv59foia5mvuj1fdoii9eknbs5.apps.googleusercontent.com', 'BtPHk2wJ3Iqp9cCIPzhN-b0y', token_params: { parse: :json }, callback_url: "http://localhost:3000/usuarios/auth/google_oauth2/callback"
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be

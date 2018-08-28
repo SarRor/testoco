@@ -19,6 +19,10 @@ gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 gem 'rmagick', '~> 2.16'
 gem 'omniauth-facebook', '~> 5.0'
 gem 'haml-rails', '~> 1.0'
+gem 'omniauth', '~> 1.8', '>= 1.8.1'
+gem 'omniauth-oauth2', '~> 1.5'
+gem 'omniauth-google-oauth2', '~> 0.5.3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

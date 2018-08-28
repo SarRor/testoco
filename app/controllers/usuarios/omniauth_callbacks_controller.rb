@@ -20,6 +20,22 @@ class Usuarios::OmniauthCallbacksController < Devise::OmniauthCallbacksControlle
       render :edit
     end
   end
+
+  def google_oauth2
+    # auth = request.env["omniauth.auth"]
+    # raise auth.to_yaml
+    # You need to implement the method below in your model (e.g. app/models/user.rb)
+    @usuario = Usuario.from_omniauth_goo(request.env['omniauth.auth'])
+
+    if @usuario.persisted?
+      flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
+      sign_in_and_redirect @usuario, event: :authentication
+    else
+      session['devise.google_data'] = request.env['omniauth.auth'].except(:extra) # Removing extra as it can overflow some session stores
+      redirect_to new_usuario_registration_url, alert: @usuario.errors.full_messages.join("\n")
+    end
+  end
+
   def failure
     #redirect_to root_path
     redirect_to new_usuario_session_path, notice: "No pudimos loguearte,
