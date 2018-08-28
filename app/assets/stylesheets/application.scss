@@ -35,4 +35,25 @@
  .navbar-custom .nav-item:hover .nav-link {
      color: #ffffff;
  }
- 
+
+#nav2 {
+  height: 100px;
+  background: #ccc;
+  margin: 0px;
+  border: 1px solid green;
+}
+#ul2 {
+  list-style-type: none;
+  line-height: inherit;
+  height: inherit;
+  margin: 0px;
+  border: 1px solid blue;
+}
+.litems {
+  display: inline;
+  font-size: 2em;
+  margin: 0px;
+  border: 1px solid red;
+  height: inherit;
+}
+.litems:hover {background-color:#f5f5f5;}
