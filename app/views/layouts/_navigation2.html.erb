@@ -1,19 +1,21 @@
-
 <nav id="nav2">
   <ul id=ul2>
-    <li class="litems">Segunda navegación</li>
-    <li class="litems">Item 1</li>
-    <li class="litems">Item 2</li>
+    <li class="litems lipadgra">Segunda navegación</li>
+    <li class="litems lipadgra">Item 1</li>
+    <li class="litems lipadgra">Item 2</li>
   </ul>
 </nav>
-
 <script>
 $(document).ready(function(){
   $(window).scroll(function() {
     if ($(document).scrollTop() > 1) {
       $("#nav2").css("height", "100px");
+      $(".litems").removeClass("lipadgra");
+      $(".litems").addClass("lipadpeq");
     } else {
       $("#nav2").css("height", "200px");
+      $(".litems").removeClass("lipadpeq");
+      $(".litems").addClass("lipadgra");
     }
   });
 });
