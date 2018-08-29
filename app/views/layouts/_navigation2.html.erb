@@ -1,3 +1,4 @@
+
 <nav id="nav2">
   <ul id=ul2>
     <li class="litems">Segunda navegación</li>
@@ -5,3 +6,15 @@
     <li class="litems">Item 2</li>
   </ul>
 </nav>
+
+<script>
+$(document).ready(function(){
+  $(window).scroll(function() {
+    if ($(document).scrollTop() > 1) {
+      $("#nav2").css("height", "100px");
+    } else {
+      $("#nav2").css("height", "200px");
+    }
+  });
+});
+</script>
